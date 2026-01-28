@@ -1,0 +1,10 @@
+footer {
+    padding: 40px;
+    font-size: var(--caption-font-size);
+    color: var(--n-500);
+    text-align: center;
+    background-image: var(--gradient-color);
+
+    /*để phá limitation of maxwidth để kéo full chiều ngang của màn hình */
+    max-width: none !important;
+}

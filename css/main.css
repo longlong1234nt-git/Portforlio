@@ -1,0 +1,83 @@
+@import "theme.css";
+@import "./sections/aboutme.css";
+@import "./sections/footer.css";
+@import "./sections/header.css";
+@import "./sections/projects.css";
+@import "./sections/skills.css";
+@import "./animation.css";
+
+/*  *{...}được gọi là Universal Selector (Bộ chọn toàn năng hoặc Bộ chọn toàn cục).. */ 
+* {
+    /* để cho padding và border k làm thay đổi size của phần tử */
+    box-sizing: border-box;
+}
+
+:root {
+    /* :root là một bộ chọn (selector), có thể xem là class của thẻ html */
+    font-size: var(--p-font-size);
+    line-height: var(--p-line-height);
+    letter-spacing: var(--p-letter-spacing);
+    
+    /* sans-serif là font dự phòng;*/
+    font-family: "Chakra Petch", sans-serif;
+
+    /* độ đậm(ordinary);*/
+    font-weight: 400;
+    
+    /* kiểu chữ bth(k nghiêng)*/
+    font-style: normal;
+
+
+    /*để khi bấm thì sẽ cuộn từ từ xuống, vd bấm xem project, thì sẽ từ từ đi xuống phần project*/
+    scroll-behavior: smooth;
+    
+}
+
+body {
+    background-color: var(--foreground-color);
+    background-size: 7px 7px;
+    background-image:  repeating-radial-gradient( 
+        circle at 0 0, transparent 0, hsla(var(--p-500-code), 0.1) 7px ), 
+        repeating-linear-gradient( var(--foreground-color) 0,var(--foreground-color) 50%);
+}
+
+section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+ 
+a {
+    text-decoration: none;
+}
+
+.container {
+    /* 0 px trên dưới và auto trái phải */
+    margin: 0 auto;
+ 
+    /* giá trị mặc định của contaitner */
+    max-width: 1536px;
+    padding: 0 2rem;
+}
+
+.section__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.section__title {
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    font-weight: bold;
+    color: var(--p-950);
+    text-transform: capitalize;
+}
+
+.section__description {
+    text-align: center;
+    max-width: 65ch;
+    color: var(--n-500);
+}
+
+

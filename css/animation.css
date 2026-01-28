@@ -1,0 +1,69 @@
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* webkit bảo đảm nó hoạt động trên almost trình duyệt*/
+@-webkit-keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes move-left {
+    to {
+        /*
+        hàm calc giúp làm phép toán bên trong nó
+        100% mean, mỗi element sẽ chuyển động sang trái, 12px là khoảng csach
+
+        */
+        transform: translateX(calc(-100% - 12px));
+    }
+}
+
+@-webkit-keyframes move-left {
+    to {
+
+        transform: translateX(calc(-100% - 12px));
+    }
+}
+
+@keyframes move-right {
+    0% {
+        /* phần tử đang nằm hoàn toàn ngoài screen*/
+        transform: translateX(-100%);
+    }
+
+    /* dịch ngược về bên phải,(vị trí ban đầu)*/
+    100% {
+        transform: translateX(calc(0% + 12px));
+        
+    }
+}
+@-webkit-keyframes move-right {
+    0% {
+        /* phần tử đang nằm hoàn toàn ngoài screen*/
+        transform: translateX(-100%);
+    }
+
+    /* dịch ngược về bên phải,(vị trí ban đầu)*/
+    100% {
+        transform: translateX(calc(0% + 12px));
+        
+    }
+}

@@ -1,0 +1,158 @@
+/* **********************
+file này dùng đề viết media query, tùy chỉnh layout khi size of screen change
+MEDIA QUERIES
+***************** */
+
+/* **********************
+DESKTOP 
+***************** */
+@media (max-width: 1536px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1028px;
+    }
+}
+
+/* **********************
+tối ưu giao diện cho tablet  và laptop nhỏ
+***************** */
+/* nhỏ hơn or = 1280px thì sẽ áp dụng các css này */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    section {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    /** header **/
+    .header__container {
+        flex-direction: column;
+    }
+
+    .header__column--left {
+        flex-direction: column;
+        align-items: center;
+         
+    }
+    .header__content--left {
+        align-items: center;
+    }
+
+    .header__content--left p { 
+        text-align: center;
+        max-width: 320px;
+    }
+
+    .header__column--right {
+    text-align: center;
+    align-items: center;
+    }   
+
+
+  /* ******************
+skills
+************ */
+    .softSkills_badge {
+        position: static !important;
+        /* 
+        hủy bỏ absolute => ức là thẻ nào viết trước thì hiện trước
+        Vô hiệu hóa top, left, right, bottom
+        Vì cha của nó (.softSkills__container) đang là display: flex, khi chuyển về static, các badge này sẽ trở thành các flex-item
+        =>ự động xếp hàng và rớt dòng (wrap) gọn gàng thay vì nằm chồng chéo lên nhau.
+        */
+    }
+
+    
+
+    .softSkills__book_icons {
+        display: none;
+    }
+        /** skills **/
+    .skills__grid_container {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        grid-auto-rows: minmax(200px, auto);
+        grid-template-rows: repeat(4, minmax(200px, auto));
+    }
+    .skills__grid_container .skill__grid_item {
+        padding: 1rem 1rem;
+        grid-column: span 1 !important;
+        grid-row: span 1  !important;
+    }
+}
+
+/* ******************
+small tablet and landscape mode
+************ */
+
+@media (max-width) { 
+    .container {
+        max-width: 640px;
+    }
+
+    .aboutMe_section {
+        margin: 80px auto;
+    }
+    .aboutMe_section img {
+        display: none;
+    }
+
+
+
+
+
+}
+
+/* ******************
+Phone
+************ */
+
+@media (max-width: 640px) {
+
+    :root {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .container {
+        max-width: 475px;
+        padding: 0 1rem;
+    }
+
+    .section__title {
+        font-size: 2rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    /** header **/
+
+    header {
+        margin-top: 20px;
+    }
+
+    .header__badge_container {
+    /* để 2 thẻ badge nằm trên 1 cột */
+        flex-direction: column;
+    }
+
+    .aboutMe__container {
+        padding: 1rem;
+        width: 90%;
+        border-radius: 2rem;
+    }
+
+    .aboutMe__content_container {
+        border-radius: 2rem;
+    }
+
+   
+}
+
+
